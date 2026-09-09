@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Método Glúteos Brasileños</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap');
+        
+        :root {
+            --primary: #ff4d94;
+            --bg-top: #2d0f4f;
+            --bg-bottom: #6b2d9a;
+            --text: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, var(--bg-top) 0%, var(--bg-bottom) 100%);
+            background-attachment: fixed;
+            color: var(--text);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 600px;
+            width: 100%;
+            padding: 20px;
+            margin: 0 auto;
+        }
+        
+        /* Typography */
+        h1 { font-weight: 900; font-size: 2.2rem; text-align: center; margin: 10px 0; color: var(--primary); }
+        h2 { font-weight: 800; font-size: 1.6rem; text-align: center; margin: 30px 0 20px; text-transform: uppercase; }
+        .subtitle { font-weight: 600; text-align: center; font-size: 1.1rem; line-height: 1.4; margin-bottom: 10px; }
+        .tagline { text-align: center; font-weight: 800; color: var(--primary); margin-bottom: 25px; }
+        
+        /* Badge */
+        .top-badge {
+            background: rgba(255,255,255,0.1);
+            border-radius: 50px;
+            padding: 10px;
+            text-align: center;
+            font-size: 0.75rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        /* Placeholders */
+        .placeholder {
+            border: 2px dashed rgba(255,255,255,0.4);
+            background: rgba(0,0,0,0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255,255,255,0.7);
+            font-weight: 600;
+            text-align: center;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            padding: 20px;
+        }
+        .img-row { display: flex; gap: 10px; margin-bottom: 25px; }
+        .img-row .placeholder { flex: 1; height: 160px; margin-bottom: 0; }
+        .results-stack .placeholder { height: 180px; margin-bottom: 10px; }
+        .app-mockup { height: 300px; margin: 30px 0; }
+        
+        /* Pricing */
+        .price-block { text-align: center; margin: 30px 0; }
+        .price-block .old { text-decoration: line-through; opacity: 0.7; font-size: 1.2rem; font-weight: 600; }
+        .price-block .new { font-size: 2.8rem; font-weight: 900; color: var(--primary); margin: 5px 0; line-height: 1; }
+        .price-block .daily { font-weight: 700; background: rgba(255,77,148,0.2); display: inline-block; padding: 6px 15px; border-radius: 20px; font-size: 0.9rem; }
+        
+        /* CTA */
+        .cta-btn {
+            display: block;
+            width: 100%;
+            background: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 1.1rem;
+            font-weight: 900;
+            border-radius: 15px;
+            text-decoration: none;
+            box-shadow: 0 8px 25px rgba(255,77,148,0.4);
+            transition: transform 0.2s;
+            margin-bottom: 10px;
+            border: none;
+            cursor: pointer;
+            text-transform: uppercase;
+        }
+        .cta-btn:active { transform: scale(0.98); }
+        .countdown { text-align: center; font-weight: 700; font-size: 0.9rem; color: #ffeb3b; margin-bottom: 30px; display: block;}
+        
+        /* Checklist */
+        .section-tag { display: inline-block; background: rgba(255,77,148,0.2); color: var(--primary); padding: 5px 12px; border-radius: 20px; font-weight: 800; font-size: 0.8rem; margin-bottom: 10px; }
+        .checklist { list-style: none; margin-bottom: 30px; }
+        .checklist li { margin-bottom: 15px; display: flex; align-items: flex-start; gap: 10px; font-size: 0.95rem; line-height: 1.4; }
+        .checklist li::before { content: '✅'; flex-shrink: 0; font-size: 1.1rem; }
+        .checklist strong { font-weight: 800; }
+        
+        /* Bonos */
+        .avatars-row { display: flex; justify-content: center; gap: 8px; margin: 20px 0; }
+        .avatar { width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.6rem; font-weight: 800; text-align: center; line-height: 1.1; }
+        .avatar.taken { background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.4); border: 2px dashed rgba(255,255,255,0.2); }
+        .avatar.free { background: var(--primary); border: 2px solid white; box-shadow: 0 0 20px rgba(255,77,148,0.6); }
+        .warning-text { text-align: center; font-weight: 800; color: #ffeb3b; margin-bottom: 5px; }
+        .urgency-text { text-align: center; margin-bottom: 30px; font-weight: 600; }
+        
+        .bonus-card { background: rgba(0,0,0,0.25); border-radius: 15px; padding: 25px 20px 20px; margin-bottom: 20px; border: 1px solid rgba(255,255,255,0.1); position: relative; }
+        .bonus-tag { position: absolute; top: -12px; right: 20px; background: var(--primary); padding: 6px 12px; border-radius: 8px; font-weight: 800; font-size: 0.75rem; text-transform: uppercase; }
+        .bonus-title { font-weight: 800; margin-bottom: 8px; font-size: 1.1rem; display: flex; align-items: center; gap: 8px; }
+        .bonus-desc { font-size: 0.9rem; line-height: 1.5; opacity: 0.9; }
+        .bonus-val { font-size: 0.85rem; opacity: 0.6; text-decoration: line-through; margin-top: 12px; font-weight: 600; }
+        
+        /* Final Card */
+        .final-card { background: white; color: #111; border-radius: 20px; overflow: hidden; margin-top: 50px; box-shadow: 0 20px 40px rgba(0,0,0,0.4); }
+        .final-timer { background: #111; color: #fff; text-align: center; padding: 12px; font-weight: 800; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; }
+        .final-content { padding: 30px 25px; }
+        .final-title { text-align: center; font-weight: 900; font-size: 1.6rem; margin-bottom: 20px; text-transform: uppercase; }
+        .final-price-box { text-align: center; margin-bottom: 25px; }
+        .final-old { text-decoration: line-through; color: #888; font-weight: 700; font-size: 1.1rem; }
+        .final-new { font-size: 3.5rem; font-weight: 900; color: var(--primary); line-height: 1; margin: 5px 0; letter-spacing: -1px; }
+        .final-daily { font-weight: 700; font-size: 0.95rem; color: #555; }
+        
+        .final-list { list-style: none; margin: 25px 0; }
+        .final-list li { margin-bottom: 12px; display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 0.95rem; border-bottom: 1px solid #f0f0f0; padding-bottom: 12px; color: #333; }
+        .final-list li:last-child { border: none; padding-bottom: 0; }
+        .final-list li::before { content: '✅'; font-size: 1.2rem; }
+        
+        .trust-badges { display: flex; justify-content: center; flex-wrap: wrap; font-size: 0.75rem; font-weight: 800; text-align: center; margin-top: 20px; gap: 15px; color: #777; text-transform: uppercase; }
+        
+        .guarantee { background: #f8f9fa; border: 2px dashed #ccc; border-radius: 12px; padding: 20px; margin-top: 25px; text-align: center; font-size: 0.9rem; font-weight: 600; line-height: 1.5; color: #444; }
+        
+        .payment-icons { display: flex; justify-content: center; gap: 10px; margin-top: 20px; }
+        .payment-icons .icon-ph { width: 45px; height: 30px; background: #e0e0e0; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 0.6rem; color: #999; font-weight: bold; border: 1px solid #ccc; }
+        
+        /* FAQ */
+        .faq-section { margin-top: 50px; }
+        .faq-item { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.15); border-radius: 12px; margin-bottom: 12px; overflow: hidden; transition: background 0.2s; }
+        .faq-q { padding: 18px; font-weight: 700; display: flex; justify-content: space-between; align-items: center; cursor: pointer; font-size: 0.95rem; }
+        .faq-q::after { content: '+'; font-weight: 400; font-size: 1.5rem; line-height: 1; }
+        .faq-item.active { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.3); }
+        .faq-item.active .faq-q::after { content: '−'; }
+        .faq-a { padding: 0 18px 18px; font-size: 0.9rem; line-height: 1.6; display: none; color: rgba(255,255,255,0.8); }
+        .faq-item.active .faq-a { display: block; }
+        
+        /* Footer */
+        footer { margin-top: 60px; text-align: center; font-size: 0.8rem; opacity: 0.6; padding-bottom: 40px; }
+        footer a { color: white; text-decoration: none; margin: 0 10px; border-bottom: 1px solid transparent; transition: border 0.2s; }
+        footer a:hover { border-bottom-color: white; }
+        .footer-copy { margin-top: 15px; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="top-badge">✅ TU CUPO ESTÁ CONFIRMADO — MÉTODO GLÚTEOS BRASILEÑOS ACTIVADO</div>
+    
+    <h1>¡FELICITACIONES!</h1>
+    <p class="subtitle">Tu trasero jamás volverá a ser el mismo. El Método Glúteos Brasileños ya está esperándote.</p>
+    <p class="tagline">28 días. 8 minutos al día. Sin excusas. 🍑🔥</p>
+    
+    <div class="img-row">
+        <div class="placeholder">SUA FOTO AQUI</div>
+        <div class="placeholder">SUA FOTO AQUI</div>
+    </div>
+    
+    <h2>DE RESULTADOS SABEMOS MUCHO...</h2>
+    <div class="results-stack">
+        <div class="placeholder">SUA FOTO AQUI</div>
+        <div class="placeholder">SUA FOTO AQUI</div>
+        <div class="placeholder">SUA FOTO AQUI</div>
+        <div class="placeholder">SUA FOTO AQUI</div>
+    </div>
+    
+    <div class="price-block">
+        <div class="old">DE $97</div>
+        <div class="new">por solo $9.90</div>
+        <div class="daily">Menos de 33¢ por día</div>
+    </div>
+    
+    <a href="#" id="cta-link-1" class="cta-btn">QUIERO MI TRANSFORMACIÓN AHORA →</a>
+    <div class="countdown">OFERTA VÁLIDA POR: <span class="timer-display">08:36</span></div>
+    
+    <br>
+    <div class="section-tag">● MÉTODO GLÚTEOS BRASILEÑOS</div>
+    <h2>LO QUE PASA CON TU BUMBUM 🍑</h2>
+    
+    <ul class="checklist">
+        <li><strong>Glúteos más grandes y definidos:</strong> Gana volumen y forma en tiempo récord.</li>
+        <li><strong>Firmeza y tonificación:</strong> Disfruta de un trasero firme y tonificado.</li>
+        <li><strong>Reducción de celulitis:</strong> Mejora la apariencia de tu piel al eliminar las células de celulitis.</li>
+        <li><strong>Resultados rápidos:</strong> Transformaciones visibles en menos de 28 días.</li>
+        <li><strong>Entrenamientos prácticos:</strong> Ejercicios fáciles de seguir en la comodidad de tu hogar.</li>
+        <li><strong>Mejora de la autoestima:</strong> Siéntete segura usando cualquier tipo de ropa.</li>
+    </ul>
+    
+    <div class="placeholder app-mockup">SUA FOTO AQUI</div>
+    
+    <div style="text-align: center;">
+        <div class="section-tag">BONOS EXCLUSIVOS</div>
+    </div>
+    <h2>¡SOLO QUEDAN 1 CUPOS CON ACCESO A LOS BONOS!</h2>
+    
+    <div class="avatars-row">
+        <div class="avatar taken">TOMADO</div>
+        <div class="avatar taken">TOMADO</div>
+        <div class="avatar taken">TOMADO</div>
+        <div class="avatar free">LIBRE</div>
+        <div class="avatar taken">TOMADO</div>
+    </div>
+    
+    <div class="warning-text">⚠️ ¡Solo 1 cupo con bonos disponible!</div>
+    <div class="urgency-text">¡Inscríbete ahora antes de que sea demasiado tarde! 🏃‍♀️🏆</div>
+    
+    <div class="bonus-card">
+        <div class="bonus-tag">AHORA GRATIS</div>
+        <div class="bonus-title">💥 El truco bumbum granada</div>
+        <div class="bonus-desc">Un entrenamiento de activación profunda que hace que el glúteo suba y se ponga más firme en pocas semanas.</div>
+        <div class="bonus-val">Valor: R$85,00</div>
+    </div>
+    
+    <div class="bonus-card">
+        <div class="bonus-tag">AHORA GRATIS</div>
+        <div class="bonus-title">🍔 Lista negra de alimentos saboteadores</div>
+        <div class="bonus-desc">Esta lista revela los alimentos que bloquean tu metabolismo y acumulan grasa.</div>
+        <div class="bonus-val">Valor: R$67,00</div>
+    </div>
+    
+    <div class="bonus-card">
+        <div class="bonus-tag">AHORA GRATIS</div>
+        <div class="bonus-title">✨ Elimina los granitos en el trasero</div>
+        <div class="bonus-desc">Receta que revela qué inflama los poros del trasero y bloquea la apariencia lisa.</div>
+        <div class="bonus-val">Valor: R$37,00</div>
+    </div>
+    
+    <div class="bonus-card">
+        <div class="bonus-tag">AHORA GRATIS</div>
+        <div class="bonus-title">💬 Soporte directo</div>
+        <div class="bonus-desc">Durante 28 días, acceso directo al soporte por WhatsApp para resolver dudas y ajustar tus entrenamientos.</div>
+        <div class="bonus-val">Valor: R$215,00</div>
+    </div>
+    
+    <div class="final-card">
+        <div class="final-timer">OFERTA POR TIEMPO LIMITADO</div>
+        <div class="final-content">
+            <div class="final-title">MÉTODO GLÚTEOS BRASILEÑOS</div>
+            <div class="final-price-box">
+                <div class="final-old">$97,00</div>
+                <div class="final-new">$9.90</div>
+                <div class="final-daily">📅 Menos de 33¢ por día — ¡menos que un café! ☕</div>
+            </div>
+            
+            <ul class="final-list">
+                <li>Método completo</li>
+                <li>App con vídeos HD</li>
+                <li>Rotinas de 8 min</li>
+                <li>Plano alimentar</li>
+                <li>Suporte WhatsApp 28 dias</li>
+                <li>4 bônus</li>
+                <li>Acesso vitalício</li>
+            </ul>
+            
+            <a href="#" id="cta-link-2" class="cta-btn">QUIERO MI TRANSFORMACIÓN AHORA →</a>
+            
+            <div class="trust-badges">
+                <span>🔒 Pago 100% seguro</span>
+                <span>⚡ Acesso imediato</span>
+                <span>🛡️ Garantia 45 dias</span>
+            </div>
+            
+            <div class="guarantee">
+                Si sigues el plan y no ves resultados visibles en 3 semanas, te devolvemos el 100% de tu dinero. Sin preguntas.
+            </div>
+            
+            <div class="payment-icons">
+                <div class="icon-ph">VISA</div>
+                <div class="icon-ph">MC</div>
+                <div class="icon-ph">PIX</div>
+                <div class="icon-ph">PPAL</div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="faq-section">
+        <h2>PREGUNTAS FRECUENTES</h2>
+        
+        <div class="faq-item">
+            <div class="faq-q">¿Necesito equipamiento?</div>
+            <div class="faq-a">No, todos los ejercicios están diseñados para usar el peso de tu propio cuerpo. Puedes hacerlos en cualquier lugar.</div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-q">¿Y si no veo resultados?</div>
+            <div class="faq-a">Tienes nuestra garantía. Si aplicas el método y no ves cambios en 3 semanas, te reembolsamos tu inversión.</div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-q">¿Sirve para principiantes?</div>
+            <div class="faq-a">Absolutamente. El método está estructurado para adaptarse a cualquier nivel, desde cero hasta avanzado.</div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-q">¿Cómo recibo el acceso?</div>
+            <div class="faq-a">Inmediatamente después del pago, recibirás un correo electrónico con tus credenciales para acceder a la plataforma y la aplicación.</div>
+        </div>
+    </div>
+    
+    <footer>
+        <a href="#">Términos de uso</a> | <a href="#">Políticas de privacidad</a>
+        <div style="margin-top: 15px;">🔒 Plataforma 100% Segura</div>
+        <div class="footer-copy">Copyright 2026 © Método Glúteos Brasileños. Todos los derechos reservados.</div>
+    </footer>
+
+</div>
+
+<script>
+    // Configurações
+    const CHECKOUT_LINK = "https://seu-link-de-checkout-aqui.com";
+    
+    // Atualiza links
+    document.getElementById('cta-link-1').href = CHECKOUT_LINK;
+    document.getElementById('cta-link-2').href = CHECKOUT_LINK;
+
+    // Lógica do Contador Regressivo (8 minutos e 36 segundos)
+    let timeInSeconds = (8 * 60) + 36;
+    const timerDisplays = document.querySelectorAll('.timer-display');
+    
+    function updateTimer() {
+        const minutes = Math.floor(timeInSeconds / 60);
+        const seconds = timeInSeconds % 60;
+        
+        const formattedTime = 
+            String(minutes).padStart(2, '0') + ':' + 
+            String(seconds).padStart(2, '0');
+            
+        timerDisplays.forEach(display => {
+            display.textContent = formattedTime;
+        });
+        
+        if (timeInSeconds > 0) {
+            timeInSeconds--;
+        } else {
+            // Reinicia ou trava no zero
+            timeInSeconds = 0;
+        }
+    }
+    
+    setInterval(updateTimer, 1000);
+    updateTimer();
+
+    // Lógica do FAQ
+    const faqItems = document.querySelectorAll('.faq-item');
+    
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-q');
+        question.addEventListener('click', () => {
+            // Fecha os outros
+            faqItems.forEach(otherItem => {
+                if (otherItem !== item) {
+                    otherItem.classList.remove('active');
+                }
+            });
+            // Alterna o atual
+            item.classList.toggle('active');
+        });
+    });
+</script>
+
+</body>
+</html>
