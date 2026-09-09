@@ -107,8 +107,8 @@
         /* Checklist */
         .section-tag { display: inline-block; background: rgba(255,77,148,0.2); color: var(--primary); padding: 5px 12px; border-radius: 20px; font-weight: 800; font-size: 0.8rem; margin-bottom: 10px; }
         .checklist { list-style: none; margin-bottom: 30px; }
-        .checklist li { margin-bottom: 15px; display: flex; align-items: flex-start; gap: 10px; font-size: 0.95rem; line-height: 1.4; }
-        .checklist li::before { content: '✅'; flex-shrink: 0; font-size: 1.1rem; }
+        .checklist li { margin-bottom: 15px; position: relative; padding-left: 32px; font-size: 0.95rem; line-height: 1.5; }
+        .checklist li::before { content: '✅'; position: absolute; left: 0; top: -2px; font-size: 1.2rem; }
         .checklist strong { font-weight: 800; }
         
         /* Bonos */
@@ -136,9 +136,9 @@
         .final-daily { font-weight: 700; font-size: 0.95rem; color: #555; }
         
         .final-list { list-style: none; margin: 25px 0; }
-        .final-list li { margin-bottom: 12px; display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 0.95rem; border-bottom: 1px solid #f0f0f0; padding-bottom: 12px; color: #333; }
+        .final-list li { margin-bottom: 12px; position: relative; padding-left: 32px; font-weight: 700; font-size: 0.95rem; border-bottom: 1px solid #f0f0f0; padding-bottom: 12px; color: #333; line-height: 1.4; }
         .final-list li:last-child { border: none; padding-bottom: 0; }
-        .final-list li::before { content: '✅'; font-size: 1.2rem; }
+        .final-list li::before { content: '✅'; font-size: 1.2rem; position: absolute; left: 0; top: -1px; }
         
         .trust-badges { display: flex; justify-content: center; flex-wrap: wrap; font-size: 0.75rem; font-weight: 800; text-align: center; margin-top: 20px; gap: 15px; color: #777; text-transform: uppercase; }
         
